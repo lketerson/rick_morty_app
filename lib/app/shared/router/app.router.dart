@@ -17,7 +17,7 @@ final roteador = GoRouter(
       path: '/details',
       builder: (context, state) {
         final extra = state.extra as Personagem?;
-        return PersonagemDetalhePage(personagemExtra: extra);
+        return PersonagemDetalhePage(personagem: extra);
       },
     ),
   ],

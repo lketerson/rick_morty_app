@@ -7,22 +7,20 @@ import '../components/card_informacoes.componente.dart';
 import '../components/linha_informacoes.componente.dart';
 
 class PersonagemDetalhePage extends StatelessWidget {
-  final Personagem? personagemExtra;
+  final Personagem? personagem;
 
-  const PersonagemDetalhePage({super.key, required this.personagemExtra});
+  const PersonagemDetalhePage({super.key, required this.personagem});
 
   @override
   Widget build(BuildContext context) {
-    if (personagemExtra == null) {
+    if (this.personagem == null) {
       return Scaffold(
         appBar: AppBar(title: const Text('Details')),
-        body: const Center(
-          child: Text('Informações do personagem não disponíveis'),
-        ),
+        body: const Center(child: Text('Character data not available.')),
       );
     }
 
-    final personagem = personagemExtra!;
+    final personagem = this.personagem!;
 
     return Scaffold(
       appBar: AppBar(title: Text(personagem.name)),
