@@ -1,16 +1,47 @@
-# rick_and_morty_app
+<img src="assets/logo.png" width=150></img>
 
-A new Flutter project.
+# Rick and Morty App
 
-## Getting Started
+Aplicativo Flutter de exemplo para listar personagens do universo "Rick and Morty".
 
-This project is a starting point for a Flutter application.
+## Visão geral
 
-A few resources to get you started if this is your first Flutter project:
+- Código principal em `lib/` com `lib/main.dart` como ponto de entrada.
+- Implementa separação de camadas (modules, data, domain, presentation) para o módulo `personagens` dentro de `lib/app/core/modules`.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Estrutura do projeto (resumida)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `lib/main.dart` - ponto de entrada do app.
+- `lib/app/app.dart` - configuração principal da aplicação (tema, router, provedores).
+- `lib/app/core/modules/personagens/` - feature de personagens com camadas:
+  - `data/` - datasources (http/cache), dtos e implementações de repositório
+  - `domain/` - entidades, repositórios abstratos e usecases
+  - `presentation/` - páginas, viewmodels e componentes UI
+- `lib/app/core/shared/` - utilitários, injeção de dependências, cliente HTTP, cache e componentes compartilhados
+
+## Convenções e padrões adotados
+
+- Arquitetura: MVVM / Camadas (Domain, Data, Presentation).
+- Injeção de dependências manual centralizada em `lib/app/core/injection/injection.dart`.
+- State management: ViewModels (ChangeNotifier/ValueNotifier conforme necessidade) e `ValueListenableBuilder`/`StreamBuilder`/`FutureBuilder`.
+
+## Requisitos
+
+- Flutter SDK (^3.9.2).
+- Dart SDK incluído no Flutter.
+- VSCode ou editor de prefrência
+
+## Instalação e execução (desenvolvimento)
+
+1. Abra este diretório no terminal.
+2. Instale dependências:
+
+```powershell
+flutter pub get
+```
+
+3. Executar o app em emulador:
+
+```powershell
+flutter run
+```
