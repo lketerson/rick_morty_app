@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../shared/extensions/theme.extensions.dart';
-import '../../../../../shared/utils/cor_status.util.dart';
+import '../../../../../shared/extensions/extensions.dart';
+import '../../../../../shared/utils/utils.dart';
 import '../../domain/entities/personagem.entity.dart';
 
 typedef VoidCallback = void Function();

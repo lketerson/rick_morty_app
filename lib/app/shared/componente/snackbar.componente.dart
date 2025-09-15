@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../extensions/theme.extensions.dart';
+import '../extensions/extensions.dart';
 
 SnackBar _snackBarCustomizado({
   required BuildContext context,

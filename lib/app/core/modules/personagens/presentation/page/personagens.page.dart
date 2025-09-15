@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../viewmodel/personagens.viewmodel.dart';
-import '../../../../../shared/componente/snackbar.componente.dart';
 
 import '../../../../../shared/base/estado/estado.base.dart';
+import '../../../../../shared/componente/snackbar.componente.dart';
 import '../../domain/entities/personagem.entity.dart';
 import '../components/card-personagem.componente.dart';
+import '../viewmodel/personagens.viewmodel.dart';
 
 class PersonagensPage extends StatefulWidget {
   final PersonagensViewModel _viewmodel;

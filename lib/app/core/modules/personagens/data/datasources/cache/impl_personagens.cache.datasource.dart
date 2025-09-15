@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import '../../../../../../shared/cache/cache.dart';
-import '../../../../../../shared/extensions/nullable_string.extensions.dart';
+import '../../../../../../shared/extensions/extensions.dart';
 import '../../dto/reposta_paginada.dto.dart';
 import 'personagens.cache.datasource.dart';
 

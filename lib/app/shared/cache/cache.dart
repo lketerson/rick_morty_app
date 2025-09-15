@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../extensions/nullable_string.extensions.dart';
+import '../extensions/extensions.dart';
 import 'exception/cache.exception.dart';
 
 /// Classe responsável por encapsular a lógica de acesso ao armazenamento local

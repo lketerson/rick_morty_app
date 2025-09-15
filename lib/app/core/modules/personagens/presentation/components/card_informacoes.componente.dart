@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../../shared/extensions/theme.extensions.dart';
-import '../../../../../shared/utils/cor_status.util.dart';
+import '../../../../../shared/extensions/extensions.dart';
+import '../../../../../shared/utils/utils.dart';
 
 class CardInformacoesComponente extends StatelessWidget {
   final String titulo;

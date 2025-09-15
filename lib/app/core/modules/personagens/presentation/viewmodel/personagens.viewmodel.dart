@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../../../../../shared/base/controlador/controlador.base.dart';
 import '../../../../../shared/base/estado/estado.base.dart';
-import '../../../../../shared/utils/conversor_exception.util.dart';
+import '../../../../../shared/utils/utils.dart';
 import '../../domain/entities/personagem.entity.dart';
 import '../../domain/usecase/usecases.dart';
 
@@ -23,7 +23,11 @@ class PersonagensViewModel extends ControladorBase<EstadoBase> {
       final resposta = await obterPaginaUseCase.call(_pagina + 1);
       final novos = resposta.resultado.map((dto) => dto.toEntity()).toList();
 
-      final merged = _removerDuplicidade(personagens.value, novos);
+      final merged = removerDuplicidadePorId<Personagem, int>(
+        personagens.value,
+        novos,
+        (p) => p.id,
+      );
       personagens.value = merged;
 
       _pagina = _pagina + 1;
@@ -45,20 +49,6 @@ class PersonagensViewModel extends ControladorBase<EstadoBase> {
     personagens.value.clear();
     hasNextPage.value = true;
     await carregarTodosPersonagens();
-  }
-
-  List<Personagem> _removerDuplicidade(
-    List<Personagem> current,
-    List<Personagem> novos,
-  ) {
-    final map = <int, Personagem>{};
-    for (var p in current) {
-      map[p.id] = p;
-    }
-    for (var p in novos) {
-      map[p.id] = p;
-    }
-    return map.values.toList();
   }
 
   @override

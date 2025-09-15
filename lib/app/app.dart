@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'shared/router/app.router.dart';
 
+import 'shared/router/app.router.dart';
 import 'shared/theme/theme.dart';
 
 class MyApp extends StatelessWidget {
