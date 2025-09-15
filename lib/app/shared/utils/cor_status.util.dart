@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../extensions/theme.extensions.dart';
+import '../extensions/extensions.dart';
 
 Color obterCoresPorStatus(BuildContext context, String status) {
   switch (status.toLowerCase()) {
